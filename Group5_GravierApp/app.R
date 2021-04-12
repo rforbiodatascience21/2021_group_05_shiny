@@ -8,7 +8,7 @@ ui <- fluidPage(
     titlePanel("Manhattan-plot, Gravier Data"),
     
     mainPanel(
-        h2("This plot show the negative log10 p-value of the gene expression, for 100 random chosen genes in the gravier data set.
+        h6("This plot show the negative log10 p-value of the gene expression, for 100 random chosen genes in the gravier data set.
            Use the sliderbar to change the significance level. The colors of the genes correspond to a significance level of 0.05")),
 
     # Sidebar with a slider input for number of bins 
