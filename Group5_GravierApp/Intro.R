@@ -28,9 +28,6 @@ gravier_data_long_nested <- gravier_data_long_nested %>%
 gravier_data_long_nested <- gravier_data_long_nested %>% filter(term == "log2_expr_level")
 
 gravier_data_long_nested <- gravier_data_long_nested %>%
-  mutate(identified_as = case_when( p.value < input$Value ~ "Significant",
-                                    TRUE ~ "Non-significant"))
-gravier_data_long_nested <- gravier_data_long_nested %>%
   mutate(neg_log10_p = -log10(p.value))
 
 saveRDS(gravier_data_long_nested, "gravier_data_long_nested.rds")

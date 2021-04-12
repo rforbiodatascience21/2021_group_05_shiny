@@ -33,7 +33,12 @@ server <- function(input, output) {
 
     output$distPlot <- renderPlot({
         library("tidyverse")
-        data<- readRDS("gravier_data_long_nested.rds")
+        
+        data <- readRDS("gravier_data_long_nested.rds")
+        
+        data <- data %>%
+            mutate(identified_as = case_when( p.value < input$Value ~ "Significant",
+                                              TRUE ~ "Non-significant"))
         
         data %>% 
             ggplot(mapping = aes(x = fct_reorder(gene, neg_log10_p, .desc = TRUE), 
