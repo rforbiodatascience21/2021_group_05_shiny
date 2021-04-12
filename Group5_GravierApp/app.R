@@ -1,6 +1,4 @@
 #
-    
-
 library(shiny)
 
 # Define UI for application that draws a histogram
@@ -13,9 +11,9 @@ ui <- fluidPage(
     sidebarLayout(
         sidebarPanel(
             sliderInput("Value",
-                        "log10(p-value)",
-                        min = -0.5,
-                        max = 3.5,
+                        " p-value",
+                        min = 0,
+                        max = 1,
                         value = 0.05)
         ),
 
